@@ -20,6 +20,7 @@ namespace kassabilet
         string vrema;
         string film;
         string fio;
+        string mesto;
         int id = 0;
         int prodaza;
 
@@ -47,14 +48,19 @@ namespace kassabilet
             vrema = maskedTextBox1.Text;
             film = textBox2.Text;
             fio = textBox3.Text;
+            mesto = comboBox1.SelectedText;
             id = id + 1;
             rnd.NextBytes(bytes1);
             prodaza += 50;
             int zagadk = bytes1.GetLowerBound(0);
             int poluz = zagadk + 5 - 3 * 2;
-            values = new string[] { zagadk.ToString(), " ", poluz.ToString(), "  ", date, "  ", vrema, "  ", film, "  ", fio, "  ", id.ToString() };
+            values = new string[] { zagadk.ToString(), " ", poluz.ToString(), " ", date, " ", vrema, " ", film, " ", fio, " ", mesto, " ", id.ToString() };
             peredatdan();
             frm.status("Спасибо за сеанс");
+
+            QRCodeEncoder encoder = new QRCodeEncoder(); //создаем объект класса QRCodeEncoder
+            Bitmap qrcode = encoder.Encode(String.Join("", values), Encoding.UTF8); // кодируем слово, полученное из TextBox'a (qrtext) в переменную qrcode. класса Bitmap(класс, который используется для работы с изображениями)
+            pictureBox1.Image = qrcode as Image;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -79,9 +85,7 @@ namespace kassabilet
 
         private void button2_Click(object sender, EventArgs e)
         {
-            QRCodeEncoder encoder = new QRCodeEncoder(); //создаем объект класса QRCodeEncoder
-            Bitmap qrcode = encoder.Encode(String.Join("", values)); // кодируем слово, полученное из TextBox'a (qrtext) в переменную qrcode. класса Bitmap(класс, который используется для работы с изображениями)
-            pictureBox1.Image = qrcode as Image;
+
             
         }
 
@@ -130,14 +134,16 @@ namespace kassabilet
         private void button6_Click(object sender, EventArgs e)
         {
             QRCodeDecoder decoder = new QRCodeDecoder(); // создаём "раскодирование изображения"
-            decod = decoder.decode(new QRCodeBitmapImage(pictureBox2.Image as Bitmap));
+            decod = decoder.decode(new QRCodeBitmapImage(pictureBox2.Image as Bitmap), Encoding.UTF8);
             label8.Text = decod;
+            textBox5.Text = decod.Split(' ')[0];
+            textBox4.Text = decod.Split(' ')[1];
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            int pre = Convert.ToInt32(maskedTextBox2.Text);
-            int vtor = Convert.ToInt32(maskedTextBox3.Text);
+            int pre = Convert.ToInt32(textBox5.Text);
+            int vtor = Convert.ToInt32(textBox4.Text);
             if (pre + 5 - 3 * 2 == vtor) {
                 label11.Text = "Билет Подлиный";
             }
@@ -199,17 +205,51 @@ namespace kassabilet
 
         private void текстовыйToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frm.RezimRaboti(2);
         }
 
         private void картаЗалаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frm.RezimRaboti(1);
         }
 
         private void картаЗалаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            frm.Show();
+            frm.RezimRaboti(1);
+        }
 
+        public enum Room
+        {
+            /*
+                Ряд 1 Место 1
+                Ряд 2 Место 1
+                Ряд 3 Место 1
+                Ряд 3 Место 2
+                Ряд 4 Место 1
+                Ряд 4 Место 2
+                Ряд 4 Место 3
+                Ряд 4 Место 4
+                Ряд 4 Место 5
+             */
+
+            Ряд1Место1=0,
+            Ряд2Место1 = 1,
+            Ряд3Место1 = 2,
+            Ряд3Место2 = 3,
+            Ряд4Место1 = 4,
+            Ряд4Место2 = 5,
+            Ряд4Место3 = 6,
+            Ряд4Место4 = 7,
+            Ряд4Место5 = 8,
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int SelectId = (sender as ComboBox).SelectedIndex;
+
+            Room rm = (Room)SelectId;
+            frm.SelectMesto(SelectId);
         }
     }
 }

@@ -39,13 +39,16 @@
             this.следующийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.продажаБилетовЗавершенаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.занятоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.режимыИнфометраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.текстовыйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.картаЗалаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.картаЗалаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,17 +70,14 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.режимыИнфометраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.текстовыйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.картаЗалаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.картаЗалаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -177,14 +177,44 @@
             this.занятоToolStripMenuItem.Text = "Занято";
             this.занятоToolStripMenuItem.Click += new System.EventHandler(this.занятоToolStripMenuItem_Click);
             // 
+            // режимыИнфометраToolStripMenuItem
+            // 
+            this.режимыИнфометраToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.текстовыйToolStripMenuItem,
+            this.картаЗалаToolStripMenuItem});
+            this.режимыИнфометраToolStripMenuItem.Name = "режимыИнфометраToolStripMenuItem";
+            this.режимыИнфометраToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
+            this.режимыИнфометраToolStripMenuItem.Text = "Режимы инфометра";
+            // 
+            // текстовыйToolStripMenuItem
+            // 
+            this.текстовыйToolStripMenuItem.Name = "текстовыйToolStripMenuItem";
+            this.текстовыйToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.текстовыйToolStripMenuItem.Text = "Текстовый";
+            this.текстовыйToolStripMenuItem.Click += new System.EventHandler(this.текстовыйToolStripMenuItem_Click);
+            // 
+            // картаЗалаToolStripMenuItem
+            // 
+            this.картаЗалаToolStripMenuItem.Name = "картаЗалаToolStripMenuItem";
+            this.картаЗалаToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.картаЗалаToolStripMenuItem.Text = "Карта зала";
+            this.картаЗалаToolStripMenuItem.Click += new System.EventHandler(this.картаЗалаToolStripMenuItem_Click);
+            // 
+            // картаЗалаToolStripMenuItem1
+            // 
+            this.картаЗалаToolStripMenuItem1.Name = "картаЗалаToolStripMenuItem1";
+            this.картаЗалаToolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
+            this.картаЗалаToolStripMenuItem1.Text = "Карта зала";
+            this.картаЗалаToolStripMenuItem1.Click += new System.EventHandler(this.картаЗалаToolStripMenuItem1_Click);
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label5);
@@ -201,9 +231,19 @@
             this.panel1.Size = new System.Drawing.Size(1083, 331);
             this.panel1.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(285, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 16);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Места";
+            // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(707, 232);
+            this.button8.Location = new System.Drawing.Point(707, 204);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(118, 23);
             this.button8.TabIndex = 16;
@@ -211,19 +251,9 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(265, 253);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(418, 24);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Все данные водить на английском языке";
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(707, 202);
+            this.button4.Location = new System.Drawing.Point(707, 174);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(118, 23);
             this.button4.TabIndex = 14;
@@ -233,7 +263,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(707, 173);
+            this.button3.Location = new System.Drawing.Point(707, 145);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 23);
             this.button3.TabIndex = 13;
@@ -248,16 +278,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(234, 214);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(707, 142);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Сгенерировать код";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -347,7 +367,7 @@
             this.monthCalendar1.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label1
             // 
@@ -365,13 +385,13 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.maskedTextBox3);
-            this.panel2.Controls.Add(this.maskedTextBox2);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.label8);
@@ -388,7 +408,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(439, 108);
+            this.panel3.Location = new System.Drawing.Point(463, 83);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 100);
             this.panel3.TabIndex = 16;
@@ -450,22 +470,6 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Первый символ";
             // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(792, 145);
-            this.maskedTextBox3.Mask = "000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(22, 20);
-            this.maskedTextBox3.TabIndex = 11;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(792, 113);
-            this.maskedTextBox2.Mask = "000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(22, 20);
-            this.maskedTextBox2.TabIndex = 10;
-            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(272, 166);
@@ -514,43 +518,48 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Проверка билетов";
             // 
-            // режимыИнфометраToolStripMenuItem
+            // comboBox1
             // 
-            this.режимыИнфометраToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.текстовыйToolStripMenuItem,
-            this.картаЗалаToolStripMenuItem});
-            this.режимыИнфометраToolStripMenuItem.Name = "режимыИнфометраToolStripMenuItem";
-            this.режимыИнфометраToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
-            this.режимыИнфометраToolStripMenuItem.Text = "Режимы инфометра";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Ряд 1 Место 1",
+            "Ряд 2 Место 1",
+            "Ряд 3 Место 1",
+            "Ряд 3 Место 2",
+            "Ряд 4 Место 1",
+            "Ряд 4 Место 2",
+            "Ряд 4 Место 3",
+            "Ряд 4 Место 4",
+            "Ряд 4 Место 5"});
+            this.comboBox1.Location = new System.Drawing.Point(340, 210);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(343, 21);
+            this.comboBox1.TabIndex = 18;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // текстовыйToolStripMenuItem
+            // textBox4
             // 
-            this.текстовыйToolStripMenuItem.Name = "текстовыйToolStripMenuItem";
-            this.текстовыйToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.текстовыйToolStripMenuItem.Text = "Текстовый";
-            this.текстовыйToolStripMenuItem.Click += new System.EventHandler(this.текстовыйToolStripMenuItem_Click);
+            this.textBox4.Location = new System.Drawing.Point(792, 145);
+            this.textBox4.MaxLength = 3;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(22, 20);
+            this.textBox4.TabIndex = 17;
             // 
-            // картаЗалаToolStripMenuItem
+            // textBox5
             // 
-            this.картаЗалаToolStripMenuItem.Name = "картаЗалаToolStripMenuItem";
-            this.картаЗалаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.картаЗалаToolStripMenuItem.Text = "Карта зала";
-            this.картаЗалаToolStripMenuItem.Click += new System.EventHandler(this.картаЗалаToolStripMenuItem_Click);
-            // 
-            // картаЗалаToolStripMenuItem1
-            // 
-            this.картаЗалаToolStripMenuItem1.Name = "картаЗалаToolStripMenuItem1";
-            this.картаЗалаToolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
-            this.картаЗалаToolStripMenuItem1.Text = "Карта зала";
-            this.картаЗалаToolStripMenuItem1.Click += new System.EventHandler(this.картаЗалаToolStripMenuItem1_Click);
+            this.textBox5.Location = new System.Drawing.Point(792, 113);
+            this.textBox5.MaxLength = 3;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(22, 20);
+            this.textBox5.TabIndex = 18;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 383);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -584,7 +593,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
@@ -592,7 +600,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.Panel panel2;
@@ -605,8 +612,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.ToolStripMenuItem итогиЗаСеансToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label13;
@@ -623,6 +628,10 @@
         private System.Windows.Forms.ToolStripMenuItem текстовыйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem картаЗалаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem картаЗалаToolStripMenuItem1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 
